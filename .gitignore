@@ -105,7 +105,7 @@ dist
 
 # Build and dist folders
 build/
-dist/
+artifacts/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
