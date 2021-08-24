@@ -52,3 +52,15 @@ Printing Status:
 2021-08-24 06:57:08    INFO    Successfully launched environment: eb-ts-express-dev
 ```
 
+### deploy / update
+
+```bash
+$ eb deploy
+Uploading eb-ts-express/app-c40d-210824_072404.zip to S3. This may take a while.
+Upload Complete.
+2021-08-24 07:24:05    INFO    Environment update is starting.      
+2021-08-24 07:24:09    INFO    Deploying new version to instance(s).
+2021-08-24 07:24:20    INFO    Instance deployment completed successfully.
+2021-08-24 07:24:26    INFO    New application version was deployed to running EC2 instances.
+2021-08-24 07:24:26    INFO    Environment update completed successfully.
+```
