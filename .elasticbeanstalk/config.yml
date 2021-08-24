@@ -2,6 +2,8 @@ branch-defaults:
   main:
     environment: eb-ts-express-dev
     group_suffix: null
+deploy:
+  artifact: artifacts/eb-ts-express.zip
 global:
   application_name: eb-ts-express
   branch: null
@@ -12,9 +14,7 @@ global:
   instance_profile: null
   platform_name: null
   platform_version: null
-  profile: null
+  profile: eb-cli.aeweb
   repository: null
   sc: git
   workspace_type: Application
-deploy:
-  artifact: dist/eb-ts-express.zip
