@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', async (req: Request, res: Response): Promise<Response> => {
-  return res.send('Hello World!');
+  return res.send('Hello World 🚀');
 });
 
 app.get('/health', async (req: Request, res: Response): Promise<Response> => {
