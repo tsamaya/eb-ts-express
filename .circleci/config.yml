@@ -47,8 +47,27 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Install AWS CLI
+          command: |
+            sudo apt-get -y -qq update
+            sudo apt-get install python3-pip awscli build-essential
+            pip3 install awscli --upgrade --user
+            pip3 install awsebcli --upgrade --user
+      - run:
+          name: Create AWS credentials config
+          command: |
+            mkdir ~/.aws
+            touch ~/.aws/config
+            chmod 600 ~/.aws/config
+            echo "[profile eb-cli.aeweb]" > ~/.aws/config
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+      - run:
           name: EB bundle
           command: npm run dist
+      - run:
+          name: EB deploy
+          command: npm run deploy
 
 workflows:
   # Below is the definition of your workflow.
@@ -61,3 +80,7 @@ workflows:
       - deploy:
           requires:
             - build-and-test
+          filters: # using regex filters requires the entire branch to match
+            branches:
+              only:
+                - main
