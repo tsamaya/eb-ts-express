@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "deploy": "bash ./scripts/deploy.sh",
     "dist": "bash ./scripts/artifacts.sh",
     "start": "node build/server.js",
     "start:dev": "ts-node-dev ./src/server.ts",
